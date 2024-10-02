@@ -37,3 +37,22 @@ body {
     text-decoration: line-through;
     color: #888;
   }
+
+
+/* Estiliza a tabela */
+table, th, tr {
+    border: 1px solid color(srgb 0.5 0.5 0.5);
+}
+table {
+    width: 100%;
+    padding: 10px 10px;
+}
+th, tr {
+    height: 25px;
+    color: black;
+    padding: 5px;
+}
+
+#vago {
+    width: 10px;
+}

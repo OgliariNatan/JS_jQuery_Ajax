@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,13 +10,23 @@
   <div class="container">
     <h1>Pauta de Audiências</h1>
     <div>
-      <input type="date" id="taskInput" placeholder="Adicione uma Data">
-      <input type="time" id="taskInput" placeholder="Adicione uma Hora">
-      <input type="text" id="taskInput" placeholder="Adicione o nome do interno">
+      <input type="date" id="taskInputDate" placeholder="Adicione uma Data">
+      <input type="time" id="taskInputTime" placeholder="Adicione uma Hora">
+      <input type="text" id="taskInputName" placeholder="Adicione o nome do interno">
       <input type="text" id="taskInput" placeholder="Adicione o comprimisso">
       <button id="addTaskBtn">Adicionar na Pauta</button>
     </div>
-    <ul id="taskList"></ul>
+    <table id="table">
+        <tr>
+            <th id="vago"></th>
+            <th>Data</th>
+            <th>Hora</th>
+            <th>Nome</th>
+            <th>Comproimisso</th>
+        </tr>
+        <tr id="taskList"> </tr>
+    </table>
+    <!-- <ul id="taskList"></ul> -->
   </div>
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script src="script.js"></script>

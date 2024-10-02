@@ -5,10 +5,17 @@ $(document).ready(function () {
     // Adicionar tarefa
     $('#addTaskBtn').on('click', function () {
       var taskText = $('#taskInput').val();
+      var taskTextDate = $('#taskInputDate').val();
+      var taskTextTime = $('#taskInputTime').val();
+      var taskTextName = $('#taskInputName').val();
+
       if (taskText.trim() !== '') {
-        addTask(taskText);
+        addTask(taskTextDate, taskTextTime, taskTextName, taskText);
         saveTasks();
         $('#taskInput').val('');
+        $('#taskInputDate').val('');
+        $('#taskInputTime').val('');
+        $('#taskInputName').val('');
       }
     });
   
@@ -28,8 +35,8 @@ $(document).ready(function () {
     });
   
     // Função para adicionar tarefa
-    function addTask(text) {
-      $('#taskList').append('<li><span>&times;</span>' + text + '</li>');
+    function addTask(date, time, nome, text) {
+      $('#taskList').append('<tr> <td id="vago"> <span>&times;</span></td>' + '<td>'+ date +'</td>' +'<td>'+text+'</td>' + '</tr>');
     }
   
     // Função para carregar tarefas salvas localmente
