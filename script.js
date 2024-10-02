@@ -1,57 +1,48 @@
 $(document).ready(function () {
-carregaTarefas();
-
-
-// Adicionar tarefa
-$('#addTarefaBtn').on('click', function () {
-    var tarefaText = $('#tarefaInput').val();
-    
-    //console.log(tarefaText) //mostra na tela
-
-    if (tarefaText.length > 0 ){ //Se tiver tarefa ele adiciona
-        addTarefas(tarefaText); //adiciona tarefa
-        salvarTarefas();
-        $('#tarefaInput').val('');
-    } 
-    
-  });
-
-  //Função para adicionar tarefas
-  function addTarefas(text){
-    $('#tarefaList').append(
-        '<li> <span>&times;</span>' + text + '</li>' );
-
-  }
-
-  //mARCA como concluido
-  $(document).on('click', 'li', function(){
-    $(this).toggleClass('completed');//adiciona a classe completed no li
-    salvarTarefas();
-  });
-
-  //remove tarefa
-  $(document).on('click', 'span', function(e){
-    e.stopPropagation();//não deixa aplicar na pai
-    $(this).parent().fadeOut(200, function() {
-        $(this).remove();
-        salvarTarefas();
+    // Carregar tarefas salvas localmente
+    loadTasks();
+  
+    // Adicionar tarefa
+    $('#addTaskBtn').on('click', function () {
+      var taskText = $('#taskInput').val();
+      if (taskText.trim() !== '') {
+        addTask(taskText);
+        saveTasks();
+        $('#taskInput').val('');
+      }
     });
-  });
-
-
-  //Função para salvar tarefas
-  function salvarTarefas() {
-    var tarefa = $('tarefaList').html();
-    localStorage.setItem('tarefas', tarefa);
-    
-  }
-  //Função para carregar as tarefas
-  function carregaTarefas() {
-    var tarefas = localStorage.getItem('tarefas');
-    //verifica se exitem dados 
-    if (tarefas) {
-        $('#tarefaList').html(tarefas);
+  
+    // Marcar/desmarcar tarefa como concluída
+    $(document).on('click', 'li', function () {
+      $(this).toggleClass('completed');
+      saveTasks();
+    });
+  
+    // Remover tarefa
+    $(document).on('click', 'span', function (e) {
+      e.stopPropagation(); // Evitar a propagação do evento para o elemento pai (li)
+      $(this).parent().fadeOut(200, function () {
+        $(this).remove();
+        saveTasks();
+      });
+    });
+  
+    // Função para adicionar tarefa
+    function addTask(text) {
+      $('#taskList').append('<li><span>&times;</span>' + text + '</li>');
     }
-  }
-
-})
+  
+    // Função para carregar tarefas salvas localmente
+    function loadTasks() {
+      var tasks = localStorage.getItem('tasks');
+      if (tasks) {
+        $('#taskList').html(tasks);
+      }
+    }
+  
+    // Função para salvar tarefas localmente
+    function saveTasks() {
+      var tasks = $('#taskList').html();
+      localStorage.setItem('tasks', tasks);
+    }
+  });
