@@ -9,7 +9,7 @@ $(document).ready(function () {
       var taskTextTime = $('#taskInputTime').val();
       var taskTextName = $('#taskInputName').val();
 
-      if (taskText.trim() !== '') {
+      if (taskText.trim() !== '' && taskTextDate.trim() !== '' && taskTextName.trim() !== '' && taskTextTime.trim() !== '') {
         addTask(taskTextDate, taskTextTime, taskTextName, taskText);
         saveTasks();
         $('#taskInput').val('');
