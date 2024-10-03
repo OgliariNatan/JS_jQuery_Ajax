@@ -20,7 +20,7 @@ $(document).ready(function () {
     });
   
     // Marcar/desmarcar tarefa como concluída
-    $(document).on('click', 'li', function () {
+    $(document).on('click', 'tr', function () {
       $(this).toggleClass('completed');
       saveTasks();
     });
@@ -28,15 +28,32 @@ $(document).ready(function () {
     // Remover tarefa
     $(document).on('click', 'span', function (e) {
       e.stopPropagation(); // Evitar a propagação do evento para o elemento pai (li)
-      $(this).parent().fadeOut(200, function () {
+      $(this).closest('tr').fadeOut(200, function () {
         $(this).remove();
         saveTasks();
       });
     });
-  
+    
+    // Função Formata data
+    function dataFormat(date){
+      const [ano, mes, dia] = date.split('-');
+      return `${dia}-${mes}-${ano}`;
+    }
+
     // Função para adicionar tarefa
-    function addTask(date, time, nome, text) {
-      $('#taskList').append('<tr> <td id="vago"> <span>&times;</span></td>' + '<td>'+ date +'</td>' +'<td>'+text+'</td>' + '</tr>');
+    function addTask(date, time, nome, situacao) {
+      //formata data
+      const dateFormatted = dataFormat(date)
+      //insere na tabela
+      $('#taskList').append(
+        '<tr>' +
+        '<td id="vago"><span>&times;</span></td>' +
+        '<td>' + dateFormatted + '</td>' +
+        '<td>' + time + '</td>' +
+        '<td>' + nome + '</td>' +
+        '<td>' + situacao + '</td>' +
+        '</tr>'
+    );
     }
   
     // Função para carregar tarefas salvas localmente

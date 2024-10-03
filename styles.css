@@ -1,7 +1,17 @@
+/* Padrão para todo o Documento */
+
+*{
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+    font-size: 1em;
+    margin: 10;
+    padding: 10;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,11 +25,16 @@ body {
   
   input {
     padding: 8px;
+    border: 1px solid #000;
   }
   
   button {
     padding: 8px;
     cursor: pointer;
+    background-color: rgb(180, 236, 26);
+    text-decoration: none;
+    border: 2px solid #000;
+    border-radius: 15px;
   }
   
   li {
@@ -41,18 +56,52 @@ body {
 
 /* Estiliza a tabela */
 table, th, tr {
-    border: 1px solid color(srgb 0.5 0.5 0.5);
+  
+  border: 1px solid color(srgb 0.5 0.5 0.5);
 }
 table {
     width: 100%;
     padding: 10px 10px;
 }
 th, tr {
-    height: 25px;
-    color: black;
-    padding: 5px;
+  height: 25px;
+  color: black;
+  padding: 5px;
+  /* justify-content: space-between; */
+  /* align-items: flex-start; */
 }
 
 #vago {
     width: 10px;
+    border: none;
+}
+
+
+
+
+/* Smartphone Landscape >>>>>>>>>>>>>>>>>>>> */
+@media (min-width: 576px) { /* se a tela for deste tamanho irá estilizar por aqui*/
+
+}
+
+
+/* Tablet Portrait >>>>>>>>>>>>>>>>>>>>>>>> */
+@media (min-width: 768px) { /* se a tela for deste tamanho irá estilizar por aqui*/
+
+
+}
+
+
+
+/* Tablet Landscape >>>>>>>>>>>>>>>>>>>>>>>> */
+@media (min-width: 992px) { /* se a tela for deste tamanho irá estilizar por aqui*/
+
+
+}
+
+
+/* Computador pessoal>>>>>>>>>>>>>>>>>>>>>> */
+
+@media (min-width: 1200px) { /* se a tela for deste tamanho irá estilizar por aqui*/
+
 }
