@@ -245,27 +245,35 @@ $(document).ready(function () {
   // Função para carregar dados do JSON
   function loadJSONData() {
       var jsonData = {
-          "taskDate": {
+          "taskInputDate": {
               "type": "date",
               "text": "Data da Tarefa",
-              "value": "2024-10-20"
+              "value": "01/12/2024"
           },
-          "taskTime": {
-              "type": "time",
+          "taskInputTime": {
               "text": "Hora da Tarefa",
-              "value": ""
+              "type": "time",
+              "value": "10:25"
           },
-          "taskName": {
+          "taskInputName": {
               "type": "text",
               "text": "Nome do Interno",
-              "value": ""
+              "value": "Chico"
           },
-          "taskDescription": {
+          "taskInput": {
               "type": "text",
               "text": "Descrição da Tarefa",
-              "value": ""
+              "value": "O dia"
+          },
+          "addTaskBtn" : {
+          "text" : "Adicionar na Pauta",
+          "type" : "button" ,
+          "value" : "OK"
           }
-      };
+          
+        };
+      
+      console.log(jsonData);
 
       $('#taskInputDate').val(jsonData.taskDate.value);
       $('#taskInputTime').val(jsonData.taskTime.value);

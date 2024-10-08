@@ -1,0 +1,30 @@
+{
+    "taskInputDate": {
+      "type": "date",
+      "text": "Data da Tarefa",
+      "value": ""
+    },
+    "taskInputTime": {
+      "type": "time",
+      "text": "Hora da Tarefa",
+      "value": ""
+    },
+    "taskInputName": {
+      "type": "text",
+      "text": "Nome do Interno",
+      "value": ""
+    },
+    "taskInput": {
+      "type": "text",
+      "text": "Descrição da Tarefa",
+      "value": ""
+    },
+    
+    "addTaskBtn" : {
+        "text" : "Adicionar na Pauta",
+        "type" : "button" ,
+        "value" : "OK"
+    }
+    
+  }
+  
