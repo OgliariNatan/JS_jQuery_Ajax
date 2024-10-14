@@ -92,6 +92,12 @@ th, tr {
   padding: 5px;
 }
 
+ .completed th {/* Para remover o tachado do texto*/
+  text-decoration: none;
+  color: black;
+  text-decoration-color: black;
+}
+
 #vago { //*Remova a linha da tabela do (x) */
   width: 10px;
   border: none;
