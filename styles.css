@@ -1,76 +1,79 @@
-/* Padrão para todo o Documento */
-
-*{
+* {
   margin: 0;
   border: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-
 body {
-    font-family: Arial, sans-serif;
-    font-size: 1em;
-    margin: 10;
-    padding: 10;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f4f4f4;
-    background: url("plano\ de\ fundo\ -\ branco.JPG");
-    background-size: cover;
-    background-position: center;
-  }
-  
-  .container {
-    text-align: center;
-  }
-  
-  input {
-    padding: 8px;
-    border: 1px solid #000;
-  }
-  
-/* Header */
-header {
-  padding: 30px;
-  text-align: center;
-  font-size: 1.5em;
-}
-
-/* Footer */
-footer {
+  font-family: Arial, sans-serif;
+  font-size: 1em;
+  margin: 10px;
   padding: 10px;
-  text-align: center;
-  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+  background: url("plano\ de\ fundo\ -\ branco.JPG");
+  background-size: cover;
+  background-position: center;
 }
 
-  button {
-    padding: 8px;
-    cursor: pointer;
-    background-color: rgb(180, 236, 26);
-    text-decoration: none;
-    border: 2px solid #000;
-    border-radius: 15px;
-  }
-  
-  li {
-    list-style-type: none;
-    margin: 10px 0;
-    padding: 10px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .completed {
-    text-decoration: line-through;
-    color: #fff;
-  }
+.container {
+  width: 80%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
 
+header, nav, .container, footer {
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 8px;
+  border: 1px solid #000;
+  margin-bottom: 10px;
+}
+
+input:focus, button:focus {
+  outline: 2px solid #000;
+}
+
+
+button {
+  padding: 8px;
+  cursor: pointer;
+  background-color: rgb(180, 236, 26);
+  text-decoration: none;
+  border: 2px solid #000;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+
+button:hover {
+  background-color: rgb(150, 200, 20);
+}
+
+li {
+  list-style-type: none;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #fff;
+}
 
 /* Estiliza a tabela */
 th, tr, td {
@@ -78,52 +81,38 @@ th, tr, td {
 }
 
 table {
-    width: 100%;
-    padding: 10px 10px;
-    background-color: #888;
-    
+  width: 100%;
+  padding: 10px;
+  background-color: #888;
 }
+
 th, tr {
   height: 25px;
   color: black;
   padding: 5px;
-  /* border: 1px solid ; */
-  /* justify-content: space-between; */
-  /* align-items: flex-start; */
 }
 
-
-#vago {
-    width: 10px;
-    border: none;
+#vago { //*Remova a linha da tabela do (x) */
+  width: 10px;
+  border: none;
 }
 
-
-
-
-/* Smartphone Landscape >>>>>>>>>>>>>>>>>>>> */
-@media (min-width: 576px) { /* se a tela for deste tamanho irá estilizar por aqui*/
-
+/* Smartphone Landscape */
+@media (min-width: 576px) {
+  /* Estilos específicos para telas maiores que 576px */
 }
 
-
-/* Tablet Portrait >>>>>>>>>>>>>>>>>>>>>>>> */
-@media (min-width: 768px) { /* se a tela for deste tamanho irá estilizar por aqui*/
-
-
+/* Tablet Portrait */
+@media (min-width: 768px) {
+  /* Estilos específicos para telas maiores que 768px */
 }
 
-
-
-/* Tablet Landscape >>>>>>>>>>>>>>>>>>>>>>>> */
-@media (min-width: 992px) { /* se a tela for deste tamanho irá estilizar por aqui*/
-
-
+/* Tablet Landscape */
+@media (min-width: 992px) {
+  /* Estilos específicos para telas maiores que 992px */
 }
 
-
-/* Computador pessoal>>>>>>>>>>>>>>>>>>>>>> */
-
-@media (min-width: 1200px) { /* se a tela for deste tamanho irá estilizar por aqui*/
-
+/* Computador pessoal */
+@media (min-width: 1200px) {
+  /* Estilos específicos para telas maiores que 1200px */
 }
